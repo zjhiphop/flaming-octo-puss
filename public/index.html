@@ -18,11 +18,15 @@ casperView<br>
   <script>
   var socket = io.connect(location.href)
     .on('img', function (data) {
-      document.getElementById('img').attributes['src'].value = "data:image/jpeg;base64, " + data
+      document.getElementById('img').attributes['src'].value = "data:image/png;base64," + data
+    })
+    .on('html', function (data) {
+      document.getElementById('html').value = data
     });
   </script>
 
   <img id="img" src="">
+  <textarea id='html'></textarea>
 </body>
 </html>
 
